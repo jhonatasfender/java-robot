@@ -27,7 +27,11 @@ public class RecordingWhatIsBeingDone {
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @SneakyThrows
             public void run() {
-                arq.close();
+                try {
+                    arq.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }));
     }

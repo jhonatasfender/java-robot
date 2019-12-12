@@ -2,13 +2,11 @@ import lombok.SneakyThrows;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 
 public class Bot {
     @SneakyThrows
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, AWTException, InterruptedException {
 
         File file = new File("./tabuada.txt");
 

@@ -50,7 +50,7 @@ public class GlobalKeyConsumer implements NativeKeyListener {
         return consume;
     }
 
-    public void consume(NativeKeyEvent e) {
+    public void consume(NativeKeyEvent e) throws NoSuchFieldException, IllegalAccessException {
         int code = e.getKeyCode();
         if (consume.contains(code)) {
             reflectConsume(e);
@@ -63,18 +63,30 @@ public class GlobalKeyConsumer implements NativeKeyListener {
     }
 
     @SneakyThrows
-    public void reflectConsume(NativeKeyEvent e) {
+    public void reflectConsume(NativeKeyEvent e) throws NoSuchFieldException, IllegalAccessException {
         Field f = NativeInputEvent.class.getDeclaredField("reserved");
         f.setAccessible(true);
         f.setShort(e, (short) 0x01);
     }
 
     public void nativeKeyPressed(NativeKeyEvent e) {
-        consume(e);
+        try {
+            consume(e);
+        } catch (NoSuchFieldException ex) {
+            ex.printStackTrace();
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void nativeKeyReleased(NativeKeyEvent e) {
-        consume(e);
+        try {
+            consume(e);
+        } catch (NoSuchFieldException ex) {
+            ex.printStackTrace();
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void nativeKeyTyped(NativeKeyEvent e) {
