@@ -1,5 +1,6 @@
 package Recording;
 
+import Bot.ChromeBrowser;
 import KeyBoard.GlobalKeyListener;
 import Mouse.GlobalMouseEventListener;
 import lombok.SneakyThrows;
@@ -18,6 +19,8 @@ public class WatchingWhatIsBeingDone {
         logger.setLevel(Level.WARNING);
 
         logger.setUseParentHandlers(false);
+
+        new ChromeBrowser();
 
         new RecordingWhatIsBeingDone();
 

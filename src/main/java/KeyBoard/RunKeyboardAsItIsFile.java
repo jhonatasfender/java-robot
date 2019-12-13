@@ -24,7 +24,6 @@ public class RunKeyboardAsItIsFile {
 
     public static void execute(String readLine, String[] split) {
         if (readLine.contains("Key Pressed")) {
-            System.out.println(split[2]);
             if (VK_SPACE.equals(split[2])) {
                 space();
             } else if (VK_ENTER.equals(split[2])) {

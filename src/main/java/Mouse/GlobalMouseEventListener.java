@@ -13,7 +13,7 @@ public class GlobalMouseEventListener implements NativeMouseInputListener {
     }
 
     public void nativeMousePressed(NativeMouseEvent e) {
-        RecordingWhatIsBeingDone.instance.writer("Mouse Pressed: " + e.getX() + ", " + e.getY());
+        RecordingWhatIsBeingDone.instance.writer("Mouse Click: " + e.getX() + ", " + e.getY());
     }
 
     public void nativeMouseReleased(NativeMouseEvent e) {
