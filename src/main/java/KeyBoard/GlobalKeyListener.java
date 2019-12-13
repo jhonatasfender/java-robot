@@ -1,3 +1,6 @@
+package KeyBoard;
+
+import Recording.RecordingWhatIsBeingDone;
 import lombok.SneakyThrows;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.keyboard.NativeKeyEvent;

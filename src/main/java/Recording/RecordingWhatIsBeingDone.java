@@ -1,9 +1,8 @@
-import lombok.SneakyThrows;
-import org.jnativehook.GlobalScreen;
+package Recording;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import lombok.SneakyThrows;
+
+import java.io.*;
 
 public class RecordingWhatIsBeingDone {
     private static FileWriter arq;
@@ -21,6 +20,12 @@ public class RecordingWhatIsBeingDone {
 
     public void writer(String anyThing) {
         writer.println(anyThing);
+    }
+
+    public static BufferedReader read() throws FileNotFoundException {
+        File file = new File("./tabuada.txt");
+
+        return new BufferedReader(new FileReader(file));
     }
 
     public void close() {

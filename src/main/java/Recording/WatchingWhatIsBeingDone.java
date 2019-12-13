@@ -1,3 +1,6 @@
+package Recording;
+
+import KeyBoard.GlobalKeyListener;
 import lombok.SneakyThrows;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
@@ -11,7 +14,7 @@ import java.util.logging.Logger;
 public class WatchingWhatIsBeingDone implements NativeMouseInputListener {
 
     public void nativeMouseClicked(NativeMouseEvent e) {
-//        System.out.println("Mouse Clicked: " + e.getClickCount());
+        // System.out.println("Mouse Clicked: " + e.getClickCount());
     }
 
     public void nativeMousePressed(NativeMouseEvent e) {
